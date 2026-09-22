@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Site appearance, editable from /admin (src/components/admin/SiteSettingsBar.tsx).
+   Public section components and the admin builder's live preview reference
+   these instead of hardcoded hex, so a color/font change applies everywhere
+   without touching component code. The muted/border/placeholder shades are
+   derived from the 3 editable colors rather than exposed as separate
+   pickers — keeps the settings panel to "a few things", per spec. */
+:root {
+  --color-bg: #EDE6D3;
+  --color-text: #3B2F23;
+  --color-accent: #A3A374;
+  --color-muted: color-mix(in srgb, var(--color-text) 65%, white);
+  --color-border: color-mix(in srgb, var(--color-bg) 60%, var(--color-text) 40%);
+  --color-placeholder: color-mix(in srgb, var(--color-accent) 60%, white);
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
