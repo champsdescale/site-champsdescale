@@ -8,9 +8,11 @@ export function HeroSection({ content }: { content: HeroContent }) {
       </span>
       <h1 className="text-4xl md:text-5xl mb-4">{content.titre}</h1>
       <p className="text-[var(--color-muted)] max-w-xl mx-auto mb-8">{content.sousTitre}</p>
-      <span className="inline-block bg-[var(--color-text)] text-[var(--color-bg)] font-semibold px-6 py-3">
-        {content.texteCta}
-      </span>
+      {content.texteCta && (
+        <span className="inline-block bg-[var(--color-text)] text-[var(--color-bg)] font-semibold px-6 py-3">
+          {content.texteCta}
+        </span>
+      )}
     </section>
   )
 }
